@@ -54,7 +54,14 @@ export const Home = () => {
     return setNominations([...nominations, movie]);
   };
 
-  const removeNomination = (movie) => {};
+  const removeNomination = (movie) => {
+    const index = nominations.findIndex(
+      (notification) => notification.imdbID === movie.imdbID
+    );
+    const updatedNominations = [...nominations];
+    updatedNominations.splice(index, 1);
+    setNominations(updatedNominations);
+  };
 
   return (
     <>
@@ -69,7 +76,10 @@ export const Home = () => {
           addNomination={addNomination}
           nominations={nominations}
         />
-        <Nominations nominations={nominations} />
+        <Nominations
+          nominations={nominations}
+          removeNomination={removeNomination}
+        />
       </section>
     </>
   );
