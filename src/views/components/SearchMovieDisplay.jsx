@@ -1,21 +1,38 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { H2 } from "../blocks/H2";
+import { SectionContainer } from "../blocks/SectionContainer";
+import { UL } from "../blocks/UL";
+import { MovieListItem } from "./MovieListItem";
 
-export const SearchMovieDisplay = ({ movies, search }) => {
-  console.log(movies);
+export const SearchMovieDisplay = ({
+  movies,
+  search,
+  addNomination,
+  nominations,
+}) => {
   return (
-    <ul>
-      {!!movies.length && search && <h2>Results for "{search}"</h2>}
+    <SectionContainer>
+      <H2> Results{search && <> for "{search}"</>}</H2>
+      <UL>
+        {!movies.length && search && <p>No results found.</p>}
+        {!!movies.length &&
+          movies.map((movie, index) => {
+            const alreadyNominated = !!nominations.filter(
+              (nomination) => nomination.imdbID === movie.imdbID
+            ).length;
 
-      {!movies.length && search && <p>No results for "{search}" found.</p>}
-      {!!movies.length &&
-        movies.map((movie) => (
-          <li key={movie.imdbID}>
-            <p>
-              {movie.Title}({movie.Year})
-            </p>
-            <button>Nominate</button>
-          </li>
-        ))}
-    </ul>
+            return (
+              <Fragment key={index}>
+                <MovieListItem
+                  movie={movie}
+                  buttonText="Nominate"
+                  onClick={() => addNomination(movie)}
+                  alreadyNominated={alreadyNominated}
+                />
+              </Fragment>
+            );
+          })}
+      </UL>
+    </SectionContainer>
   );
 };

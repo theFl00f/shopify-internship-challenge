@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  width: calc(100vw - 34px);
+  @apply min-h-screen;
+  @apply bg-gray-200;
+}
+
+ul {
+  @apply list-disc;
+}

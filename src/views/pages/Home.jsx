@@ -7,6 +7,9 @@ import { SearchMovies } from "../components/SearchMovies";
 export const Home = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
+  const [nominations, setNominations] = useState([]);
+
+  // Display search results
 
   const filterUniqueMovies = (movies) => {
     const result = [];
@@ -36,18 +39,37 @@ export const Home = () => {
 
   useEffect(() => {
     fetchMovies();
-    console.log(search);
   }, [search]);
+
+  // Change nominations
+
+  const addNomination = (movie) => {
+    if (
+      !!nominations.filter((nomination) => nomination.imdbID === movie.imdbID)
+        .length
+    ) {
+      //should not be reached
+      return alert("Oops! Movie has already been nominated.");
+    }
+    return setNominations([...nominations, movie]);
+  };
+
+  const removeNomination = (movie) => {};
 
   return (
     <>
-      <h1 className="text-2xl font-semibold">The Shoppies</h1>
+      <h1 className="text-2xl font-semibold mb-4">The Shoppies</h1>
       <section>
         <SearchMovies setSearch={setSearch} />
       </section>
-      <section className="grid grid-cols-2">
-        <SearchMovieDisplay movies={movies} search={search} />
-        <Nominations />
+      <section className="grid grid-cols-2 mt-4 gap-4">
+        <SearchMovieDisplay
+          movies={movies}
+          search={search}
+          addNomination={addNomination}
+          nominations={nominations}
+        />
+        <Nominations nominations={nominations} />
       </section>
     </>
   );
