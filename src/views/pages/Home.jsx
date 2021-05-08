@@ -70,7 +70,7 @@ export const Home = () => {
       <section>
         <SearchMovies setSearch={setSearch} />
       </section>
-      <section className="grid grid-cols-2 mt-4 gap-4">
+      <section className="grid md:grid-cols-2 mt-4 gap-4">
         <SearchMovieDisplay
           movies={movies}
           search={search}
