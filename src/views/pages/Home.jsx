@@ -39,6 +39,7 @@ export const Home = () => {
 
   useEffect(() => {
     fetchMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   // Change nominations
