@@ -28,6 +28,7 @@ export const SearchMovieDisplay = ({
                   buttonText="Nominate"
                   onClick={() => addNomination(movie)}
                   alreadyNominated={alreadyNominated}
+                  nominations={nominations}
                 />
               </Fragment>
             );

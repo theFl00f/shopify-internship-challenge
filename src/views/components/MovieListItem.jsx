@@ -6,6 +6,7 @@ export const MovieListItem = ({
   buttonText,
   onClick,
   alreadyNominated,
+  nominations,
 }) => {
   return (
     <LI>
@@ -13,7 +14,12 @@ export const MovieListItem = ({
         <p className="pr-2">
           {movie.Title} ({movie.Year})
         </p>
-        <Button disabled={alreadyNominated} onClick={onClick}>
+        <Button
+          disabled={
+            alreadyNominated || (nominations && nominations.length >= 5)
+          }
+          onClick={onClick}
+        >
           {buttonText}
         </Button>
       </div>
