@@ -25,7 +25,7 @@ export const SearchMovies = ({ setSearch }) => {
         <input
           onChange={handleChange}
           className="w-full border-gray-200 border-solid border-2 rounded-sm pl-10 py-1"
-          type="text"
+          type="search"
           name="search"
         />
       </div>
