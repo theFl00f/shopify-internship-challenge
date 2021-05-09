@@ -8,7 +8,6 @@ export const Button = ({ children, onClick, disabled }) => {
       "opacity-50 cursor-default": disabled,
     }
   );
-  console.log(disabled);
   return (
     <button onClick={onClick} disabled={disabled} className={className}>
       {children}
