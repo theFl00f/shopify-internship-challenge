@@ -21,6 +21,8 @@ export const SearchMovieDisplay = ({
               (nomination) => nomination.imdbID === movie.imdbID
             ).length;
 
+            console.log(alreadyNominated);
+
             return (
               <Fragment key={index}>
                 <MovieListItem

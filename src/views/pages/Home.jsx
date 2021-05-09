@@ -9,7 +9,7 @@ export const Home = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [nominations, setNominations] = useState(
-    parse(window.sessionStorage.getItem("nominations"))
+    parse(window.localStorage.getItem("nominations"))
   );
 
   // Display search results
@@ -46,7 +46,7 @@ export const Home = () => {
   }, [search]);
 
   useEffect(() => {
-    window.sessionStorage.setItem("nominations", stringify(nominations));
+    window.localStorage.setItem("nominations", stringify(nominations));
   }, [nominations]);
 
   // Change nominations
