@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/shopify-internship-challenge/static/css/main.b047cbeb.chunk.css",
-    "main.js": "/shopify-internship-challenge/static/js/main.2e75a4ba.chunk.js",
-    "main.js.map": "/shopify-internship-challenge/static/js/main.2e75a4ba.chunk.js.map",
+    "main.js": "/shopify-internship-challenge/static/js/main.42926fc0.chunk.js",
+    "main.js.map": "/shopify-internship-challenge/static/js/main.42926fc0.chunk.js.map",
     "runtime-main.js": "/shopify-internship-challenge/static/js/runtime-main.44aca6c2.js",
     "runtime-main.js.map": "/shopify-internship-challenge/static/js/runtime-main.44aca6c2.js.map",
     "static/js/2.7448f304.chunk.js": "/shopify-internship-challenge/static/js/2.7448f304.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.44aca6c2.js",
     "static/js/2.7448f304.chunk.js",
     "static/css/main.b047cbeb.chunk.css",
-    "static/js/main.2e75a4ba.chunk.js"
+    "static/js/main.42926fc0.chunk.js"
   ]
 }
