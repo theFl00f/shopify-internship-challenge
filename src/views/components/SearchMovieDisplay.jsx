@@ -17,7 +17,6 @@ export const SearchMovieDisplay = ({
         {!movies.length && search && <p>No results found.</p>}
         {!!movies.length &&
           movies.map((movie, index) => {
-            console.log(nominations);
             const alreadyNominated = !!nominations.filter(
               (nomination) => nomination.imdbID === movie.imdbID
             ).length;
