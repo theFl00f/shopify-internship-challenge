@@ -3,11 +3,14 @@ import { movieDao } from "../../context/persistenceContext";
 import { SearchMovieDisplay } from "../components/SearchMovieDisplay";
 import { Nominations } from "../components/Nominations";
 import { SearchMovies } from "../components/SearchMovies";
+import { parse, stringify } from "../util/stringifyUtil";
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  const [nominations, setNominations] = useState([]);
+  const [nominations, setNominations] = useState(
+    parse(window.localStorage.getItem("nominations"))
+  );
 
   // Display search results
 
@@ -41,6 +44,10 @@ export const Home = () => {
     fetchMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
+
+  useEffect(() => {
+    window.localStorage.setItem("nominations", stringify(nominations));
+  }, [nominations]);
 
   // Change nominations
 
