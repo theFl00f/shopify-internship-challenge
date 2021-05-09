@@ -18,6 +18,5 @@ This app was created in a couple days for the challenge portion of the Shopify I
 * see a banner after adding a 5th movie
 * can remove items from your nomination list
 
-Next steps for this app (if I don't get to them) are:
-* RWD for mobile
+Next steps for this app are:
 * use localstorage to persist your choices on page refresh
