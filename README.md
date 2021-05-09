@@ -6,6 +6,9 @@
 <img alt="TailwindCSS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?&style=for-the-badge&logo=tailwind-css&logoColor=white"/>
  </div>
  
+ 
+ [Live demo](https://thefl00f.github.io/shopify-internship-challenge/)
+ 
 This app was created in a couple days for the challenge portion of the Shopify Internship Application. I used React and plain JavaScript (as opposed to TypeScript) in the interest of time. TailwindCSS was chosen for ease of rapid prototyping.
  
  As a user, you:
