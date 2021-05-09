@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  width: calc(100vw - 34px);
+  margin-left: calc(100vw - 100%);
   @apply min-h-screen;
   @apply bg-gray-200;
 }
