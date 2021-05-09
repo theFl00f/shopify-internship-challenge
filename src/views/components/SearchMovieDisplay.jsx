@@ -10,6 +10,7 @@ export const SearchMovieDisplay = ({
   addNomination,
   nominations,
 }) => {
+  console.log({ movies, search, nominations });
   return (
     <SectionContainer>
       <H2> Results{search && <> for "{search}"</>}</H2>
